@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+
+
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="fa_botellon_list">
+      <field name="name">fa.botellon list</field>
+      <field name="model">fa.botellon</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="color"/>
+          <field name="litros"/>
+          <field name="status"/>
+        </tree>
+      </field>
+    </record>
+
+
+   <!--  vista form -->
+      <record model="ir.ui.view" id="fa_botellon_form">
+        <field name="name">fa.botellon form</field>
+        <field name="model">fa.botellon</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+          <form>
+            <group>
+                <field name="color"/>
+         	 	    <field name="litros"/>
+          		  <field name="status"/>
+                <field name="filtro_id"/>
+            </group>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="fa_botellon_action_window">
+        <field name="name">Crud de Botellones</field>
+        <field name="res_model">fa.botellon</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+      <!--  <menuitem name="Botellones" id="fa_botellon_menu_root"/> -->
+
+        <menuitem 
+          name="Botellon" id="fa_botellon_menu_1" 
+          parent="filtro_filtro_agua_menu_root" 
+          action="fa_botellon_action_window"/> 
+
+
+  </data>
+</odoo>

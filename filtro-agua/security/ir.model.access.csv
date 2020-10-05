@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_filtro_filtro_agua,fa.filtro_agua,model_fa_filtro_agua,,1,1,1,1
+access_fa_botellon,fa.botellon,model_fa_botellon,,1,1,1,1
+access_fa_departamento,fa.departamento,model_fa_departamento,,1,1,1,1
+access_fa_vasos_agua,fa.vasos_agua,model_fa_vasos_agua,,1,1,1,1

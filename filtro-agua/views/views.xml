@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+
+
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="fa_filtro_agua_list">
+      <field name="name">fa.filtro_agua list</field>
+      <field name="model">fa.filtro_agua</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="serial"/>
+          <field name="marca"/>
+          <field name="temperatura"/>
+          <field name="dispensadores"/>
+          <field name="date"/>
+          <field name="fecha_garantia"/>
+          <field name="gabinete"/>
+          <field name="persona_id"/>
+          <field name="botellones"/>
+          <field name="departamentos_ids"/>
+        </tree>
+      </field>
+    </record>
+
+
+   <!--  vista form -->
+      <record model="ir.ui.view" id="fa_filtro_agua_form">
+        <field name="name">fa.filtro_agua form</field>
+        <field name="model">fa.filtro_agua</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+          <form>
+            <group>
+                <field name="serial"/>
+                <field name="marca"/>
+                <field name="temperatura"/>
+                <field name="dispensadores"/>
+                <field name="date"/>
+                <field name="fecha_garantia"/>
+                <field name="gabinete"/>
+                <field name="persona_id"/>
+                <field name="botellones"/>
+                <field name="departamentos_ids"/>
+            </group>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="filtro_agua_action_window">
+        <field name="name">Crud de Filtro</field>
+        <field name="res_model">fa.filtro_agua</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+       <menuitem name="filtro" id="filtro_filtro_agua_menu_root" action="filtro_agua_action_window"/>
+
+       
+
+
+  </data>
+</odoo>

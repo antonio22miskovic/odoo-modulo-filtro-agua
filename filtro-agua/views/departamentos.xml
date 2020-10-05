@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+
+
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="fa_departamento_list">
+      <field name="name">fa.departamento list</field>
+      <field name="model">fa.departamento</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipos"/>
+          <field name="filtros_ids"/>
+        </tree>
+      </field>
+    </record>
+
+
+   <!--  vista form -->
+      <record model="ir.ui.view" id="fa_departamento_form">
+        <field name="name">fa.departamento form</field>
+        <field name="model">fa.departamento</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+          <form>
+            <group>
+                <field name="name"/>
+                <field name="tipos"/>
+            </group>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="fa_departamento_action_window">
+        <field name="name">Crud de Botellones</field>
+        <field name="res_model">fa.departamento</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+      <!--  <menuitem name="Botellones" id="fa_botellon_menu_root"/> -->
+
+        <menuitem 
+          name="Crud de Departamentos" id="fa_departamentos_menu_1" 
+          parent="filtro_filtro_agua_menu_root" 
+          action="fa_departamento_action_window"/> 
+
+
+  </data>
+</odoo>
